@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EDUCATE</title>
+    <!-- NAVIGATION -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+  </head>
+  <body>
+
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Educate</a>
+    </nav>
+<div class="container mt-5">
+
+  <a href="/registrar" class="btn btn-primary">Nuevo</a>
+  <br/>
+  
+      <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <td>No.</td>
+            <td>NOMBRES Y APELLIDOS</td>
+            <td>TIPO DNI</td>
+            <td>DNI</td>
+            <td>TELEFONO</td>
+            <td>CORREO</td>
+            <td>CONTRASENA</td>
+            <td>ACCIONES</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (dato) { %>
+            <% for(var i = 0; i < dato.length; i++) { %>
+              <tr>
+                <td><%= (i + 1) %></td>
+                <td><%= dato[i].nombres %> <%= dato[i].apellidos %></td>
+                <td><%= dato[i].tipodni %></td>
+                <td><%= dato[i].dni %></td>
+                <td><%= dato[i].telefono %></td>
+                <td><%= dato[i].correo %></td>
+                <td><%= dato[i].contrasena %></td>
+                <td  colspan="2">
+                  <a href="/actualizar/<%= dato[i].idpersona %>" class="btn btn-info">Editar</a>
+                  <a href="/eliminar/<%= dato[i].idpersona %>" class="btn btn-danger">Eliminar</a>
+                </td>
+              </tr>
+            <% } %>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  
+  </div>
+
+
+</body>
+</html>
+

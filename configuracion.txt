@@ -1,0 +1,6 @@
+npm init -y
+npm i express
+npm i mysql
+npm i express-myconnection
+npm i ejs
+npm i morgan
